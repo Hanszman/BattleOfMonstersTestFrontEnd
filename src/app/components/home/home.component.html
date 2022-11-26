@@ -13,9 +13,16 @@
         </div>
         <div *ngIf="playersMonsterSelected" class="selectedCard">
             <img src="{{imgDir}}{{selectedPlayersMonster.imageUrl}}" class="selectedMonsterImg">
-            <p class="selectedMonsterName">
-                {{selectedPlayersMonster.name}}
-            </p>
+            <p class="selectedMonsterName">{{selectedPlayersMonster.name}}</p>
+            <hr>
+            <p class="selectedMonsterText">HP</p>
+            <div class="progressBar"><div class="progressBarLoaded" [style.width.%]="selectedPlayersMonster.hp"></div></div>
+            <p class="selectedMonsterText">Attack</p>
+            <div class="progressBar"><div class="progressBarLoaded" [style.width.%]="selectedPlayersMonster.attack"></div></div>
+            <p class="selectedMonsterText">Defense</p>
+            <div class="progressBar"><div class="progressBarLoaded" [style.width.%]="selectedPlayersMonster.defense"></div></div>
+            <p class="selectedMonsterText">Speed</p>
+            <div class="progressBar"><div class="progressBarLoaded" [style.width.%]="selectedPlayersMonster.speed"></div></div>
         </div>
         <div>
             <button class="buttonBattle" (click)="startBattle()">Start Battle</button>
@@ -25,9 +32,16 @@
         </div>
         <div *ngIf="computersMonsterSelected" class="selectedCard">
             <img src="{{imgDir}}{{selectedComputersMonster.imageUrl}}" class="selectedMonsterImg">
-            <p class="selectedMonsterName">
-                {{selectedComputersMonster.name}}
-            </p>
+            <p class="selectedMonsterName">{{selectedComputersMonster.name}}</p>
+            <hr>
+            <p class="selectedMonsterText">HP</p>
+            <div class="progressBar"><div class="progressBarLoaded" [style.width.%]="selectedComputersMonster.hp"></div></div>
+            <p class="selectedMonsterText">Attack</p>
+            <div class="progressBar"><div class="progressBarLoaded" [style.width.%]="selectedComputersMonster.attack"></div></div>
+            <p class="selectedMonsterText">Defense</p>
+            <div class="progressBar"><div class="progressBarLoaded" [style.width.%]="selectedComputersMonster.defense"></div></div>
+            <p class="selectedMonsterText">Speed</p>
+            <div class="progressBar"><div class="progressBarLoaded" [style.width.%]="selectedComputersMonster.speed"></div></div>
         </div>
     </div>
 </div>
