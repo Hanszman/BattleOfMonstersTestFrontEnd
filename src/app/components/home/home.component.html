@@ -1,8 +1,8 @@
 <div class="container">
     <h1 class="title">Battle of Monsters</h1>
-    <p class="subtitle">Select your monster</p>
+    <h3 class="subtitle">Select your monster</h3>
     <div class="cards">
-        <div *ngFor="let monster of listMonsters; let i = index" class="monster" (click)="showMonsterData()">
+        <div *ngFor="let monster of listMonsters; let i = index" class="monsterCard" (click)="showMonsterData()">
             <img src="{{imgDir}}{{monster.imageUrl}}" class="monsterImg">
             <p class="monsterName">{{monster.name}}</p>
         </div>

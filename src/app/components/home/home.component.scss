@@ -1,13 +1,39 @@
 .container {
-    text-align: center;
+    display: grid;
+    justify-content: center;
     font-family: arial;
+}
+
+.subtitle {
+    margin: 0px;
+    padding: 0px;
+    font-weight: normal;
 }
 
 .cards {
     display: inline-flex;
 }
 
+.monsterCard {
+    cursor: pointer;
+    margin: 15px 30px 30px 0px;
+    border-radius: 7px;
+    box-shadow: 1px 1px 10px grey;
+}
+
+.monsterImg {
+    margin: 5px 5px 0px;
+    padding: 0px;
+}
+
+.monsterName {
+    text-align: left;
+    margin: 2px 5px 7px;
+    padding: 0px;
+}
+
 .buttonBattle {
+    cursor: pointer;
     color: white;
     background-color: #799A82;
     border-radius: 7px;
