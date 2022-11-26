@@ -12,8 +12,8 @@
             <h2 class="notSelectedCardText">Player</h2>
         </div>
         <div *ngIf="playersMonsterSelected" class="selectedCard">
-            <img>
-            <p>{{selectedPlayersMonster.name}}</p>
+            <img src="{{imgDir}}{{selectedPlayersMonster.imageUrl}}" class="selectedMonsterImg">
+            <p class="selectedMonsterName">{{selectedPlayersMonster.name}}</p>
         </div>
         <div>
             <button class="buttonBattle" (click)="startBattle()">Start Battle</button>
@@ -22,8 +22,8 @@
             <h2 class="notSelectedCardText">Computer</h2>
         </div>
         <div *ngIf="computersMonsterSelected" class="selectedCard">
-            <img>
-            <p>{{selectedComputersMonster.name}}</p>
+            <img src="{{imgDir}}{{selectedComputersMonster.imageUrl}}" class="selectedMonsterImg">
+            <p class="selectedMonsterName">{{selectedComputersMonster.name}}</p>
         </div>
     </div>
 </div>
