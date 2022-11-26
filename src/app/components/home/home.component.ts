@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit {
     selectedComputersMonster: any;
     playersMonsterSelected: boolean = false;
     computersMonsterSelected: boolean = false;
+    winner: any;
+    showMessage: boolean = false;
 
     constructor(private battleService: BattleService) { }
 
@@ -34,6 +36,7 @@ export class HomeComponent implements OnInit {
     }
 
     selectPlayersMonster(monsterId: any) {
+        this.showMessage = false;
         this.selectedPlayersMonster = this.listMonsters.find((m: { id: any; }) => m.id === monsterId);
         this.playersMonsterSelected = true;
         this.selectComputersMonster(monsterId);
@@ -52,6 +55,7 @@ export class HomeComponent implements OnInit {
     }
 
     startBattle() {
+        this.showMessage = true;
         console.log('startBattle');
     }
 }

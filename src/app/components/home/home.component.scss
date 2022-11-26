@@ -40,6 +40,24 @@
     padding: 0px;
 }
 
+.message {
+    background-color: #E1F8FF;
+    border-color: rgb(5, 68, 5);
+    border: 1px solid;
+    border-radius: 7px;
+    margin: 0px 0px 30px;
+    width: 95%
+}
+
+.messageText {
+    color: rgb(5, 68, 5);
+    margin: 15px 25px;
+}
+
+.battle {
+    display: inline-flex;
+}
+
 .buttonBattle {
     cursor: pointer;
     font-size: 18px;
@@ -51,10 +69,6 @@
     margin: 0px 30px 0px 0px;
     position: relative;
     top: 50%;
-}
-
-.battle {
-    display: inline-flex;
 }
 
 .notSelectedCard, .selectedCard {
