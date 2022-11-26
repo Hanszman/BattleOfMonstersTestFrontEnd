@@ -8,22 +8,22 @@
         </div>
     </div>
     <div class="battle">
-        <div *ngIf="!monsterSelected" class="notSelectedCard">
+        <div *ngIf="!playersMonsterSelected" class="notSelectedCard">
             <h2 class="notSelectedCardText">Player</h2>
         </div>
-        <div *ngIf="monsterSelected" class="selectedCard">
+        <div *ngIf="playersMonsterSelected" class="selectedCard">
             <img>
-            <p>
+            <p>{{selectedPlayersMonster.name}}</p>
         </div>
         <div>
             <button class="buttonBattle" (click)="startBattle()">Start Battle</button>
         </div>
-        <div *ngIf="!monsterSelected" class="notSelectedCard">
+        <div *ngIf="!computersMonsterSelected" class="notSelectedCard">
             <h2 class="notSelectedCardText">Computer</h2>
         </div>
-        <div *ngIf="monsterSelected" class="selectedCard">
+        <div *ngIf="computersMonsterSelected" class="selectedCard">
             <img>
-            <p>
+            <p>{{selectedComputersMonster.name}}</p>
         </div>
     </div>
 </div>

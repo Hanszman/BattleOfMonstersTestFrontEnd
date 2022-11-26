@@ -11,7 +11,11 @@ export class HomeComponent implements OnInit {
     server: String = ConfigClass.getUrlApi().toString();
     imgDir = '../../../assets/imgs/';
     listMonsters: any;
-    monsterSelected: boolean = false;
+    arrayIdMonsters: any[] = [];
+    selectedPlayersMonster: any;
+    selectedComputersMonster: any;
+    playersMonsterSelected: boolean = false;
+    computersMonsterSelected: boolean = false;
 
     constructor(private battleService: BattleService) { }
 
@@ -23,21 +27,28 @@ export class HomeComponent implements OnInit {
         this.battleService.getTodos().subscribe(resp => {
             if (resp && resp.body && resp.body.dados) {
                 this.listMonsters = resp.body.dados;
-                console.log(this.listMonsters);
             } else {
                 console.log('No response from API.');
-            }        
+            }
         });
     }
 
-    selectPlayersMonster(index: any) {
-        console.log(index);
-        this.monsterSelected = true;
-        this.selectComputersMonster();
+    selectPlayersMonster(monsterId: any) {
+        this.selectedPlayersMonster = this.listMonsters.find((m: { id: any; }) => m.id === monsterId);
+        this.playersMonsterSelected = true;
+        this.selectComputersMonster(monsterId);
     }
 
-    selectComputersMonster() {
-
+    selectComputersMonster(monsterId: any) {
+        this.arrayIdMonsters = [];
+        for (let i = 0; i < this.listMonsters.length; i++) {
+            if (this.listMonsters[i].id !== monsterId) {
+                this.arrayIdMonsters.push(this.listMonsters[i].id);
+            }
+        }
+        let randomIdMonster = this.arrayIdMonsters[Math.floor(Math.random()*this.arrayIdMonsters.length)];
+        this.selectedComputersMonster = this.listMonsters.find((m: { id: any; }) => m.id === randomIdMonster);
+        this.computersMonsterSelected = true;
     }
 
     startBattle() {
