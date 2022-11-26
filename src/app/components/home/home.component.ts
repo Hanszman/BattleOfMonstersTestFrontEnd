@@ -55,7 +55,13 @@ export class HomeComponent implements OnInit {
     }
 
     startBattle() {
+        let body = {
+            "monster1Id": this.selectedPlayersMonster.id,
+            "monster2Id": this.selectedComputersMonster.id,
+        }
+        this.battleService.postBattle(body).subscribe(resp => {
+            console.log(resp);
+        });
         this.showMessage = true;
-        console.log('startBattle');
     }
 }
