@@ -2,20 +2,28 @@
     <h1 class="title">Battle of Monsters</h1>
     <h3 class="subtitle">Select your monster</h3>
     <div class="cards">
-        <div *ngFor="let monster of listMonsters; let i = index" class="monsterCard" (click)="showMonsterData()">
+        <div *ngFor="let monster of listMonsters; let i = index" class="monsterCard" (click)="selectPlayersMonster(monster.id)">
             <img src="{{imgDir}}{{monster.imageUrl}}" class="monsterImg">
             <p class="monsterName">{{monster.name}}</p>
         </div>
     </div>
     <div class="battle">
-        <div class="notSelectedCard">
+        <div *ngIf="!monsterSelected" class="notSelectedCard">
             <h2 class="notSelectedCardText">Player</h2>
+        </div>
+        <div *ngIf="monsterSelected" class="selectedCard">
+            <img>
+            <p>
         </div>
         <div>
             <button class="buttonBattle" (click)="startBattle()">Start Battle</button>
         </div>
-        <div class="notSelectedCard">
+        <div *ngIf="!monsterSelected" class="notSelectedCard">
             <h2 class="notSelectedCardText">Computer</h2>
+        </div>
+        <div *ngIf="monsterSelected" class="selectedCard">
+            <img>
+            <p>
         </div>
     </div>
 </div>
