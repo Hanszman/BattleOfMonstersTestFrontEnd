@@ -60,7 +60,13 @@ export class HomeComponent implements OnInit {
             "monster2Id": this.selectedComputersMonster.id,
         }
         this.battleService.postBattle(body).subscribe(resp => {
-            console.log(resp);
+            if (resp && resp.body && resp.body.dados) {
+                let winnerId = parseInt(resp.body.dados, 10);
+                this.winner = this.listMonsters.find((m: { id: any; }) => m.id === winnerId);
+            } else {
+                console.log('No response from API.');
+            }
+            
         });
         this.showMessage = true;
     }

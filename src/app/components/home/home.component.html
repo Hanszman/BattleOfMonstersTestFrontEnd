@@ -8,7 +8,7 @@
         </div>
     </div>
     <div *ngIf="showMessage" class="message">
-        <p class="messageText">FULANO wins!</p>
+        <p class="messageText">{{winner.name}} wins!</p>
     </div>
     <div class="battle">
         <div *ngIf="!playersMonsterSelected" class="notSelectedCard">
