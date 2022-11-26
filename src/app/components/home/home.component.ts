@@ -9,6 +9,7 @@ import { ConfigClass } from '../../classes/config-class';
 })
 export class HomeComponent implements OnInit {
   listMonsters: any;
+  imgDir = '../../../assets/imgs/';
   server: String = ConfigClass.getUrlApi().toString();
 
   constructor(private battleService: BattleService) { }
@@ -19,8 +20,17 @@ export class HomeComponent implements OnInit {
 
   loadMonsters() {
     this.battleService.getTodos().subscribe(resp => {
-        console.log(resp);
+        if (resp && resp.body && resp.body.dados) {
+            this.listMonsters = resp.body.dados;
+            console.log(this.listMonsters);
+        } else {
+            console.log('No response from API.');
+        }        
     });
+  }
+  
+  showMonsterData() {
+
   }
 
   startBattle() {
