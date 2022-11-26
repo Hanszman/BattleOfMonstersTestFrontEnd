@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
     }
 
     loadMonsters() {
-        this.battleService.getTodos().subscribe(resp => {
+        this.battleService.getMonsters().subscribe(resp => {
             if (resp && resp.body && resp.body.dados) {
                 this.listMonsters = resp.body.dados;
             } else {

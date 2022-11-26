@@ -17,17 +17,11 @@ const path = `${ConfigClass.getUrlApi().toString()}`
 export class BattleService {
   constructor(private http: HttpClient) {}
 
-  getTodos(): Observable<HttpResponse<RespostaClass>> {
+  getMonsters(): Observable<HttpResponse<RespostaClass>> {
     return this.http.get<RespostaClass>(
       `${path}/monsters`, {observe: 'response'}
     );
-  } 
-
-  getId(id: number): Observable<HttpResponse<RespostaClass>> {
-    return this.http.get<RespostaClass>(
-      `${path}/monsters/${id}`, {observe: 'response'}
-    );
-  } 
+  }
 
   postBattle(body: any): Observable<HttpResponse<RespostaClass>> {
     return this.http.post<RespostaClass>(
