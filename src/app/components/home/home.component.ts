@@ -22,4 +22,8 @@ export class HomeComponent implements OnInit {
         console.log(resp);
     });
   }
+
+  startBattle() {
+    console.log('startBattle');
+  }
 }

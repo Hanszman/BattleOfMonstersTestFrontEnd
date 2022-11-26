@@ -9,7 +9,7 @@ const httpOpcoes = {
     'Content-type': 'application/json'
   })
 }
-const path = `${ConfigClass.getUrlApi().toString()}/` 
+const path = `${ConfigClass.getUrlApi().toString()}` 
 
 @Injectable({
   providedIn: 'root'
